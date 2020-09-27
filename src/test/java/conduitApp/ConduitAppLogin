@@ -1,10 +1,17 @@
 https://conduit.productionready.io/api/users/login
 
+1)
 username=Karate12345
 email=karate1@test.com
 pwd=Karate12345
 
+2)
+username=Karate1
+email=karate@test.com
+pwd=karate123
 
 mvn test
 mvn test -Dtest=ConduitAPITestRunner#testTags
 mvn test "-Dkarate.options=--tags @regression"
+mvn test "-Dkarate.options=--tags @regression" -Dkarate.env="dev"
+mvn test "-Dkarate.options=--tags @regression" -Dkarate.env="qa"

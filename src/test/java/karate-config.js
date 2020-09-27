@@ -4,15 +4,22 @@ function fn() {
   if (!env) {
     env = 'dev';
   }
+  
   var config = {
-    env: env,
-	myVarName: 'someValue'
+    apiUrl: 'https://conduit.productionready.io/api/'
   }
+  
   if (env == 'dev') {
-    // customize
-    // e.g. config.foo = 'bar';
-  } else if (env == 'e2e') {
-    // customize
+	  config.userEmail = 'karate1@test.com'
+	  config.userPassword = 'Karate12345'
+  } 
+  if (env == 'qa') {
+	  config.userEmail = 'karate@test.com'
+	  config.userPassword = 'karate123'
   }
+
+  var accessToken = karate.callSingle('classpath:helpers/LoginConduitApp.feature', config).authToken
+  karate.configure('headers', {Authorization: 'Token ' + accessToken})
+  
   return config;
 }
