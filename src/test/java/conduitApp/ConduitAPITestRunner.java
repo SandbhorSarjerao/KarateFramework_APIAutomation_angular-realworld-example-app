@@ -1,7 +1,9 @@
 package conduitApp;
 
+import com.intuit.karate.KarateOptions;
 import com.intuit.karate.junit5.Karate;
 
+@KarateOptions(tags = {"@debug", "@regression"})
 class ConduitAPITestRunner {
     
     // this will run all *.feature files that exist in sub-directories
@@ -11,4 +13,8 @@ class ConduitAPITestRunner {
         return Karate.run().relativeTo(getClass());
     }
     
+    // @Karate.Test
+    // Karate testTags() {
+    //     return Karate.run().tags("@debug").relativeTo(getClass());
+    // }
 }

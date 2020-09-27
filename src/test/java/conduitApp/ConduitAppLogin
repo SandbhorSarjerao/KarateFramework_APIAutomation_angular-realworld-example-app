@@ -1,5 +1,10 @@
-http://localhost:4200/login
+https://conduit.productionready.io/api/users/login
 
 username=Karate12345
 email=karate1@test.com
 pwd=Karate12345
+
+
+mvn test
+mvn test -Dtest=ConduitAPITestRunner#testTags
+mvn test "-Dkarate.options=--tags @regression"

@@ -1,4 +1,7 @@
+
+@debug
 Feature: Conduit Application Home Page API Test
+
 
     Scenario: GET All Tags from Conduit Application Home Page
         Given url 'https://conduit.productionready.io/api/tags'

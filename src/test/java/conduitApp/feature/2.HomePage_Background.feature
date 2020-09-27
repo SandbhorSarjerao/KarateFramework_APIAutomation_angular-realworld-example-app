@@ -1,3 +1,4 @@
+@regression
 Feature: Conduit Application Home Page API Test
 
 		Background: Define URL
